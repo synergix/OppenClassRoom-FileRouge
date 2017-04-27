@@ -1,5 +1,7 @@
 package fr.filerouge.client;
 
+import fr.cnrs.mdm.referentiel.common.dao.mock.RandomValue;
+
 public class Client {
 	private String nom;
 	private String prenom;
@@ -7,15 +9,24 @@ public class Client {
 	private String numero;
 	private String mail;
 	private String motDePass;
+	private int numClient = RandomValue.getRandomInt(1, 10000000);
 
-//	public Client(String nom, String prenom, String adresse, String numero, String mail) {
-//		this.adresse = adresse;
-//		this.mail = mail;
-//		this.nom = nom;
-//		this.numero = numero;
-//		this.prenom = prenom;
-//	}
-//	
+	public Client(String nom, String prenom, String adresse, String numero, String mail) {
+		this.numClient = RandomValue.getRandomInt(1, 10000000);
+		this.adresse = adresse;
+		this.mail = mail;
+		this.nom = nom;
+		this.numero = numero;
+		this.prenom = prenom;
+	}
+
+	public Client() {
+
+	}
+
+	public int getNumClient() {
+		return numClient;
+	}
 
 	public String getMotDePass() {
 		return motDePass;
@@ -65,4 +76,9 @@ public class Client {
 		this.prenom = prenom;
 	}
 
+	@Override
+	public String toString() {
+
+		return getNom() + " - " + getNumClient();
+	}
 }

@@ -12,12 +12,14 @@
   
   <servlet>
   <servlet-name>FileRougeServlet</servlet-name>
-  <servlet-class>fr.filerouge.servlet.FileRougeServlet</servlet-class>
+  <servlet-class>fr.filerouge.servlet.Accueil</servlet-class>
+  <load-on-startup>1</load-on-startup>
   </servlet>
   
   <servlet-mapping>
   <servlet-name>FileRougeServlet</servlet-name>
-  <url-pattern>/fileRougeServlet</url-pattern>
+  <url-pattern>/accueil</url-pattern>
+  
   </servlet-mapping>
  
   <servlet>
@@ -28,6 +30,16 @@
    <servlet-mapping>
   <servlet-name>CreationClient</servlet-name>
   <url-pattern>/creationClient</url-pattern>
+  </servlet-mapping>
+<!-- Commande -->
+  <servlet>
+  <servlet-name>CreationCommande</servlet-name>
+  <servlet-class>fr.filerouge.servlet.CreationCommande</servlet-class>
+  
+  </servlet>
+   <servlet-mapping>
+  <servlet-name>CreationCommande</servlet-name>
+  <url-pattern>/creationCommande</url-pattern>
   </servlet-mapping>
     <servlet>
   <servlet-name>Connexion</servlet-name>

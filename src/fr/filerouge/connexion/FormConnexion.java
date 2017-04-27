@@ -7,11 +7,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import fr.filerouge.client.Client;
+import fr.filerouge.client.Utilisateurs;
+import fr.filerouge.commande.Commande;
 
 public class FormConnexion {
 	private final String CHAMPS_EMAIL = "email";
 	private final String CHAMPS_PWD = "pwd";
 	private Map<String, String> erreurs = new HashMap<String, String>();
+	
+	private Map<String,Commande> listCommande=new HashMap<String,Commande>();
 
 	private String resultat;
 
@@ -27,9 +31,9 @@ public class FormConnexion {
 		this.erreurs.put(champ, valeur);
 	}
 
-	public Client getUtilisateur(HttpServletRequest request) {
+	public Utilisateurs getUtilisateur(HttpServletRequest request) {
 
-		Client utilisateur = new Client();
+		Utilisateurs utilisateur = new Utilisateurs();
 
 		String email = getValeurChamps(request, CHAMPS_EMAIL);
 		String pwd = getValeurChamps(request, CHAMPS_PWD);
